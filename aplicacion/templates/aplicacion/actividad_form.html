@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'aplicacion/index.html' %}
+    {% block content %}
+    <h1>Formulario de tarea</h1>
+    <a id="volver" class="back" href="{% url 'pendientes'%}">↩︎</a>
+    <form method="post" autocomplete="off" class="contenedor">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input id="boton2" type="submit" value="Agregar">
+    </form>
+    {% endblock %}
+</body>
+</html>
